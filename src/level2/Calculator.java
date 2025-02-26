@@ -2,9 +2,6 @@ package level2;
 
 public class Calculator {
 
-    int[] values = new int[2];
-    char operator;
-
     //계산 함수
     int operation(int[] values, char operator) {
         int result= 0;
@@ -24,6 +21,7 @@ public class Calculator {
                 result = (values[0] * values[1]);
                 break;
             case '/':
+                //result = (values[0] / values[1]);
                 if(values[1] != 0){
                     result = (values[0] / values[1]);
                 }else {
@@ -34,6 +32,47 @@ public class Calculator {
                 System.out.println("사칙 연산 기호는 +,-,*,/만 사용가능해요.");
         }
         return result;
+    }
+
+    int operationChkValidation(int[] values, char operator) {
+        int result= 0;
+
+        switch (operator){
+            case '+':
+                result = (values[0] + values[1]);
+                break;
+            case '-':
+                result = (values[0] - values[1]);
+                break;
+            case '*':
+                result = (values[0] * values[1]);
+                break;
+            case '/':
+                result = (values[0] / values[1]);
+                break;
+        }
+        return result;
+    }
+
+    void operationException(int[] values, char operator) {
+        try{
+            switch (operator){
+                case '+':
+                    System.out.println("더하기 계산 결과는 " + (values[0] + values[1]) + "입니다.");
+                    break;
+                case '-':
+                    System.out.println("빼기 계산 결과는 " + (values[0] - values[1]) + "입니다.");
+                    break;
+                case '*':
+                    System.out.println("곱하기 계산 결과는 " + (values[0] * values[1]) + "입니다.");
+                    break;
+                case '/':
+                    System.out.println("나누기 계산 결과는 " + (values[0] / values[1]) + "입니다.");
+                    break;
+            }
+        }catch (Exception e){
+            System.out.println("연산을 진행할 수 없어요");
+        }
     }
 
      boolean checkContinue(String str) {
