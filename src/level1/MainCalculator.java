@@ -25,8 +25,6 @@ public class MainCalculator {
                     sc.nextLine();
                     i--;
                 }
-
-
             }
 
             System.out.println(values[0] + "와" + values[1] + " 사이 계산할 사칙연산 기호를 정해주세요: ");
