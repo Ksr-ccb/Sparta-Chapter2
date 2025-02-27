@@ -4,8 +4,27 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    static void inputValues(int[] values, Scanner sc, Calculator calculator){
+        for(int i = 0; i < 2; i++){
+            System.out.print("연산을 진행할 "+ (i+1) +"번째 정수를 입력해주세요 : ");
+            try{
+                values[i] = sc.nextInt();
+                if(values[i] < 0){
+                    System.out.println("0 이상의 값만 입력이 가능해요.");
+                    sc.nextLine();
+                    i--;
+                }else{
+                    calculator.setValues(values[i], i);
+                }
+            }catch (InputMismatchException e) {
+                System.out.println("정수 값을 입력해주세요!");
+                sc.nextLine();
+                i--;
+            }
+        }
+    }
 
+    public static void main(String[] args) {
         Calculator calculator = new Calculator();
 
         Scanner sc = new Scanner(System.in);
@@ -16,23 +35,7 @@ public class Main {
 
         while(exitFlag){
             //계산기에 들어갈 수 입력 받기
-            for(int i = 0; i < 2; i++){
-                System.out.print("연산을 진행할 "+ (i+1) +"번째 정수를 입력해주세요 : ");
-                try{
-                    values[i] = sc.nextInt();
-                    if(values[i] < 0){
-                        System.out.println("0 이상의 값만 입력이 가능해요.");
-                        sc.nextLine();
-                        i--;
-                    }else{
-                        calculator.setValues(values[i], i);
-                    }
-                }catch (InputMismatchException e) {
-                    System.out.println("정수 값을 입력해주세요!");
-                    sc.nextLine();
-                    i--;
-                }
-            }
+            inputValues(values , sc, calculator);
 
             // 입력 유효성 검사
             //////////// 입력 유효성 검사///////////
@@ -72,7 +75,6 @@ public class Main {
             }
 
             calculator.operationException();
-
             System.out.println("계산 결과 값은 : " + calculator.getResult() + " 입니다");
             /// ///////////////계산기는 끝/////////////////
 
@@ -89,13 +91,16 @@ public class Main {
 
                 finishStr = sc.nextLine();
                 if(finishStr.equalsIgnoreCase("delete")){
-                    calculator.deleteSavedResult();
+                    try{
+                        calculator.deleteSavedResult();
+                    }catch (Exception e){
+                        System.out.println("누적 결과값을 삭제할 수 없어요.");
+                    }
                 }
             }
             exitFlag = calculator.checkContinue(finishStr);
             System.out.println("//////////////////////////////////////");
-
         }
-
     }
+
 }

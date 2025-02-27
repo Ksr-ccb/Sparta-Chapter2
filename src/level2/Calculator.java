@@ -15,7 +15,6 @@ public class Calculator {
         if((values.length !=2)){
             System.out.println("계산할 정수가 올바르게 입력되지 않았어요");
         }
-
         switch (operator){
             case '+':
                 result = (values[0] + values[1]);
