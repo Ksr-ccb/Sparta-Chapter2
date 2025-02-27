@@ -1,7 +1,10 @@
 package level3;
 import java.util.Scanner;
 
-public class ArithmeticCalculator {
 
+public enum ArithmeticCalculator {;
 
+    public <S> void setOperand(S value){
+
+    }
 }
