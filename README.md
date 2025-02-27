@@ -26,34 +26,36 @@
     - 추가) 람다 & 스트림 학습을 위해 여러 가지 조회 조건들을 추가하여 구현 하기!!
 
 ## 어떻게 할 것인가 2025.02.27
-- 1️⃣ 기본적인 연산 기능을 담당하는 Calculator 클래스
-- ✔ 연산 수행 및 결과 저장 역할
+**
+ 1️⃣ 기본적인 연산 기능을 담당하는 Calculator 클래스
+ ✔ 연산 수행 및 결과 저장 역할
 
-- calculate(T num1, T num2, OperatorType operator):
+ calculate(T num1, T num2, OperatorType operator):
 - 두 숫자와 연산자 타입을 받아 연산을 수행
 - 결과를 내부 컬렉션(List 등)에 저장
 - 연산 결과를 반환
 
- - getResults():
+  getResults():
  - 저장된 연산 결과 리스트를 반환 (Getter)
  
- - clearResults():
+  clearResults():
  - 저장된 연산 결과를 모두 삭제
 
- - removeFirstResult():
+  removeFirstResult():
  - 저장된 연산 결과 중 가장 오래된 데이터를 삭제
 
-- 2️⃣ 사칙연산 타입을 관리하는 OperatorType (Enum)
-- ✔ 연산자 종류를 정의하고, 이를 Calculator에서 활용
+ 2️⃣ 사칙연산 타입을 관리하는 OperatorType (Enum)
+ ✔ 연산자 종류를 정의하고, 이를 Calculator에서 활용
 
  - ADD(+), SUBTRACT(-), MULTIPLY(*), DIVIDE(/):
  - 각 연산을 수행하는 메서드를 포함
 
-- 3️⃣ 입력과 출력 관리를 담당하는 App 클래스 (메인 실행 클래스)
-- ✔ 사용자 입력을 받고, Calculator와 상호작용
+ 3️⃣ 입력과 출력 관리를 담당하는 App 클래스 (메인 실행 클래스)
+ ✔ 사용자 입력을 받고, Calculator와 상호작용
 
-main(String[] args):
-1. 사용자 입력 받기
-2. calculate() 메서드를 호출하여 연산 수행
-3. 결과를 출력
-4. getResults()를 호출할지와 계산기 종료 여부를 사용자에게 선택하도록 유도
+ main(String[] args):
+ 1. 사용자 입력 받기
+ 2. calculate() 메서드를 호출하여 연산 수행
+ 3. 결과를 출력
+ 4. getResults()를 호출할지와 계산기 종료 여부를 사용자에게 선택하도록 유도
+**
