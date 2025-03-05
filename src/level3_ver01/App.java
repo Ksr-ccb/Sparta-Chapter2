@@ -1,6 +1,4 @@
 package level3_ver01;
-
-
 import java.util.Scanner;
 
 public class App {
@@ -23,7 +21,11 @@ public class App {
                 calculator.calculate(inputOperator(), recordController);
             }else {
                 //handlingRecords
-                pickHandleRecord();
+                if(handleSavedResult()){ //정렬하기
+                    customSortingRecord();
+                }else{ //수정/삭제하기?
+                    pickHandleRecord();
+                }
             }
             exitFlag = checkContinue();
         }
@@ -126,7 +128,44 @@ public class App {
         }
     }
     /// ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    static void handleSavedResult(int index) {
+    static boolean handleSavedResult() {
+        System.out.println("<기록중인 계산 결과 값>");
+        recordController.printSavedResult();
+
+        System.out.println("//////////////////////////////////////");
+        System.out.println("이용할 기능을 입력하세요. \n 1. 조회하기(default)  \t 2. 계산 기록 수정/삭제 \n");
+        System.out.println("현재 기록된 계산기 기록은 "+ recordController.getResultsLength()+"개 입니다.");
+        System.out.println("//////////////////////////////////////");
+
+        String finishStr = sc.nextLine();
+
+        if(finishStr.equalsIgnoreCase("2")){
+            System.out.println("//////////////////////////////////////");
+            System.out.println("계산기 기록 조회하기를 시작합니다.");
+            return false;
+        }else{
+            System.out.println("//////////////////////////////////////");
+            System.out.println("계산 기록 수정/삭제를 시작합니다.");
+            return true;
+        }
+    }
+
+    static void customSortingRecord(){
+        System.out.print("기준점을 입력하시면 기준점 이상의 기록들이 오름차순으로 출력돼요.");
+        System.out.print("값을 입력하시거나, 돌아가시려면 'back' 를 입력하세요 : ");
+
+        double standard;
+        try{
+            standard = sc.nextDouble();
+            recordController.sortingAboveValue(standard);
+
+        }catch (Exception e){
+            System.out.println("유효하지 않은 입력이에요.");
+            System.out.println("/////////////////////////////////////");
+        }
+    }
+
+    static void editDeleteRecord(int index){
         System.out.print("수정할 값 혹은 'delete'를 입력하여 값을 변경할 수 있어요. 돌아가시려면 'back' 를 입력하세요 : ");
 
         String totalStr;
@@ -145,7 +184,7 @@ public class App {
         } else if (totalStr.equalsIgnoreCase("delete")){
             recordController.deleteSavedResult(index);
         } else if (totalStr.equalsIgnoreCase("back")){
-            pickHandleRecord();
+            handleSavedResult();
         }else {
             System.out.println("유효하지 않은 입력이에요.");
             System.out.println("/////////////////////////////////////");
@@ -153,30 +192,30 @@ public class App {
     }
 
      static void pickHandleRecord(){
-        System.out.println("<기록중인 계산 결과 값>");
-        recordController.printSavedResult();
-        System.out.print("수정/삭제 할 결과 값의 순서를 입력하시거나 (0부터시작), 돌아가시려면 'back' 를 입력하세요 : ");
+         System.out.print("수정/삭제 할 결과 값의 순서를 입력하시거나 (0부터시작), 돌아가시려면 'back' 를 입력하세요 : ");
 
-        String totalStr;
-        totalStr = sc.nextLine();
+         String totalStr;
+         totalStr = sc.nextLine();
 
-        if(totalStr.matches("\\d+")){ //int값이면
-            try{
-                int index = Integer.parseInt(totalStr);
-                System.out.println( index + "번 째 결과값 " + recordController.getResult(index));
-                handleSavedResult(index);
-            }catch (Exception e){
-                System.out.println("누적 결과값을 불러올 수 없어요");
-                System.out.println("에러 메시지 : " + e.getMessage());
-            }
-        } else if (totalStr.equalsIgnoreCase("back")){
-        }else {
-            System.out.println("유효하지 않은 입력이에요.");
-            System.out.println("/////////////////////////////////////");
-        }
+         if(totalStr.matches("\\d+")){ //int값이면
+             try{
+                 int index = Integer.parseInt(totalStr);
+                 System.out.println( index + "번 째 결과값 " + recordController.getResult(index));
+                 editDeleteRecord(index);
+             }catch (Exception e){
+                 System.out.println("누적 결과값을 불러올 수 없어요");
+                 System.out.println("에러 메시지 : " + e.getMessage());
+             }
+         } else if (totalStr.equalsIgnoreCase("back")){
+             return;
+         }else {
+             System.out.println("유효하지 않은 입력이에요.");
+             System.out.println("/////////////////////////////////////");
+         }
     }
+    /// ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     static boolean selectService() {
-        System.out.println("//////////////////////////////////////");
+        System.out.println("////////////////////////////////////// \n");
         System.out.println("이용할 기능을 입력하세요. \n 1. 계산기(default)  \t 2. 계산 기록 관리 하기 \n");
         System.out.println("현재 기록된 계산기 기록은 "+ recordController.getResultsLength()+"개 입니다.");
         System.out.println("//////////////////////////////////////");
