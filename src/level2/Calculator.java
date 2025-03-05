@@ -7,12 +7,11 @@ import java.util.Scanner;
 
 public class Calculator {
     Scanner sc = new Scanner(System.in);
-    private int[] values = new int[2];
-    private int result= 0;
+    private final int[] values = new int[2];
     private String resultStr;
     private char operator;
 
-    private List<Integer> savedResults= new ArrayList<>();
+    private final List<Integer> savedResults= new ArrayList<>();
 
     void inputValues(){
         for(int i = 0; i < 2; i++){
@@ -39,7 +38,7 @@ public class Calculator {
         String temp = sc.nextLine();
 
         if( operationException(temp)) {
-            setOperator( (char)temp.charAt(0));
+            setOperator(temp.charAt(0));
             //operationException(temp);
         }else{
             System.out.println(operator + "은 유효한 연산 기호가 아니에요 ");
@@ -59,7 +58,7 @@ public class Calculator {
         try{
             switch (operator){
                 case '+':
-                    result = (values[0] + values[1]);
+                    int result = (values[0] + values[1]);
                     resultStr = "더하기 계산 결과는 " + result + "입니다.";
                     savedResults.add(result);
                     break;
@@ -161,12 +160,11 @@ public class Calculator {
 
             }catch (Exception e){
                 System.out.println("누적 결과값을 불러올 수 없어요");
-                System.out.println("에러 메시지 : " + e.toString());
+                System.out.println("에러 메시지 : " + e);
             }
         } else if (totalStr.equalsIgnoreCase("delete")){
             deleteSavedResult(index);
         } else if (totalStr.equalsIgnoreCase("back")){
-            return;
         }else {
             System.out.println("유효하지 않은 입력이에요.");
             System.out.println("/////////////////////////////////////");
@@ -187,10 +185,9 @@ public class Calculator {
                 handleSavedResult(index);
             }catch (Exception e){
                 System.out.println("누적 결과값을 불러올 수 없어요");
-                System.out.println("에러 메시지 : " + e.toString());
+                System.out.println("에러 메시지 : " + e);
             }
         } else if (totalStr.equalsIgnoreCase("back")){
-            return;
         }else {
             System.out.println("유효하지 않은 입력이에요.");
             System.out.println("/////////////////////////////////////");

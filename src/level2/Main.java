@@ -15,8 +15,6 @@ public class Main {
             calculator.operate();//결과 출력
             
             exitFlag = calculator.checkContinue(); // 계산기 종료여부 + 누적 계산 결과 리스트 접근 여부
-
-
         }
     }
 }
