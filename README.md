@@ -1,3 +1,29 @@
+# 💡 계산기 기능
+  ### 사용자 인터페이스 방식
+   - 콘솔 기반
+     
+  ### 입력
+   - 0 이상의 양의 정수(+실수) 2가지
+   - 수행할 사칙연산의 기호(+,-,*,/)
+
+  ### 특수 상황에 대한 예외 처리
+  - 0 이상의 실수만 입력하게 하기
+  - int. double 범위를 넘어가는 수 입력 못받게 처리
+  - 나누기에 분모 0 못오게 처리
+  - 각 입력에 주어진 포멧이 들어오지 않으면 다시 입력받게 하기
+
+---
+ # 설계 (UML)
+  ### ✔️ Lv.1
+   <p align="center"><img src="https://github.com/user-attachments/assets/0c1eec06-0196-4a12-b93e-4fa81cecabab" width="300" /></p>
+
+  ### ✔️ Lv.2
+  <p align="center"><img src="https://github.com/user-attachments/assets/a2bc2be4-5b57-40bf-9d17-b85a92da722a" width="500" /></p>
+
+  ### ✔️ Lv.3_ver01
+  <p align="center"><img src="https://github.com/user-attachments/assets/a66754a1-365c-43df-8544-d2f39bc98ce5" /></p>
+
+
 # 🏷️ 계산기 과제 수행 기록
   <p align="center"><img src="https://github.com/user-attachments/assets/3e8e811f-9095-499e-ae88-28beb88ede37" width="300" /></p>
   
@@ -35,13 +61,8 @@
       - 기록 접근할 때 파라미터에 인덱스가 들어가는 경우를 대비해 IndexOutOfBoundsException 예외 처리 (2025.03.05)
 
  ---
-  ### 💡 특수 상황에 대한 예외 처리
-      - 0 이상의 실수만 입력하게 하기
-      - int. double 범위를 넘어가는 수 입력 못받게 처리
-      - 나누기에 분모 0 못오게 처리
-      - 각 입력에 주어진 포멧이 들어오지 않으면 다시 입력받게 하기
-      
 
+      
 ----------------
 
 # 📚 과제 소개
@@ -93,5 +114,4 @@
       - [ ]  단, 해당 메서드를 구현할 때 Lambda & Stream을 활용하여 구현합니다.
           - [ ]  Java 강의에서 람다 & 스트림을 학습 및 복습 하시고 적용 해보세요!
 
-
-      
+---
