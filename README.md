@@ -50,7 +50,7 @@
     - Enum 타입을 활용하여 연산자 타입에 대한 정보를 관리 (2025.03.04)
     - int,double을 모두 호환하고 숫자를 가리키는 제네릭 클래스 생성 (2025.03.04)
 ---
-   <p align="center"><img src="https://github.com/user-attachments/assets/0cac3782-7b0c-4ef1-9fd6-a5ab83bc29c9" width="500"/></p>
+   <p align="center"><img src="https://github.com/user-attachments/assets/9264a69b-ef5e-4ebd-b4b2-dba14a5cb164" width="500"/></p>
 
   ### **✔️ Lv.3_ver01**
     - ArithmeticCalculator 클래스를 제네릭으로 수정 (2025.03.05)
