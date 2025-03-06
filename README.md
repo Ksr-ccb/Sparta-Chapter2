@@ -21,7 +21,7 @@
   <p align="center"><img src="https://github.com/user-attachments/assets/a2bc2be4-5b57-40bf-9d17-b85a92da722a" width="500" /></p>
 
   ### ✔️ Lv.3_ver01
-  <p align="center"><img src="https://github.com/user-attachments/assets/a66754a1-365c-43df-8544-d2f39bc98ce5" /></p>
+  <p align="center"><img src="https://github.com/user-attachments/assets/592e0984-de12-4369-a24d-b059111fa1ac" /></p>
 
 
 # 🏷️ 계산기 과제 수행 기록
@@ -50,8 +50,8 @@
     - Enum 타입을 활용하여 연산자 타입에 대한 정보를 관리 (2025.03.04)
     - int,double을 모두 호환하고 숫자를 가리키는 제네릭 클래스 생성 (2025.03.04)
 ---
-   <p align="center"><img src="https://github.com/user-attachments/assets/9264a69b-ef5e-4ebd-b4b2-dba14a5cb164" width="500"/></p>
-
+   <p align="center"><img src="https://github.com/user-attachments/assets/98535a79-95d7-431e-a7c4-cbc74c3d2d89" width="500"/></p>
+   
   ### **✔️ Lv.3_ver01**
     - ArithmeticCalculator 클래스를 제네릭으로 수정 (2025.03.05)
       - ArithmeticCalculator클래스 에서는 "계산"에 관련된 함수만 남김 (2025.03.05)
