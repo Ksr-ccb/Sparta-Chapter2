@@ -1,7 +1,7 @@
-# 계산기 과제 수행 기록
- ![Image](https://github.com/user-attachments/assets/3e8e811f-9095-499e-ae88-28beb88ede37)
-  ### **Lv.1** 
+# 🏷️ 계산기 과제 수행 기록
+  <p align="center"><img src="https://github.com/user-attachments/assets/3e8e811f-9095-499e-ae88-28beb88ede37" width="300" /></p>
   
+  ### **✔️ Lv.1** 
     - 양의 정수(0 포함)를 입력받기 (2025. 02. 26)
     - 사칙연산 기호(➕,➖,✖️,➗)를 입력받기 (2025. 02. 26)
     - 위에서 입력받은 양의 정수 2개와 사칙연산 기호를 사용하여 연산을 진행한 후 결과값을 출력하기 (2025. 02. 26)
@@ -9,21 +9,24 @@
     - 반복문을 사용 (2025. 02. 26)
       - 반복의 종료를 알려주는 “exit” 문자열을 입력하기 전까지 무한으로 계산을 진행 (2025. 02. 26)
     - InputMismatchException 예외 처리 (제대로된 정수값이 들어오지 않을 경우 대비(2025.02.27)
-    
-  ![Image](https://github.com/user-attachments/assets/3e263dd2-ecca-4ff2-90b4-326930b78819)
-  ### **Lv.2**
+---
+   <p align="center"><img src="https://github.com/user-attachments/assets/3e263dd2-ecca-4ff2-90b4-326930b78819" width="400"/></p>
+  
+  ### **✔️ Lv.2**
     - Calculator 클래스의 연산 결과를 저장하고 있는 컬렉션 필드를 읽기 (2025. 02. 27)
     - 가장 먼저 저장된 데이터를 삭제하는 기능 (2025. 02. 27)
     - 저장된 값들을 index로 접근하고 수정/삭제하는 기능 (2025.03.04)
     - double이 분모일 때 나누기 0해도 예외 작동 안하는 것 수정 (2025.03.05)
-  ### **Lv.3**
+---
+  ### **Lv.3(미완성)**
     - 양의 정수(0 포함)를 입력받기 (2025.03.04)
     - 사칙연산 기호(➕,➖,✖️,➗)를 입력받기 (2025.03.04)
     - Enum 타입을 활용하여 연산자 타입에 대한 정보를 관리 (2025.03.04)
     - int,double을 모두 호환하고 숫자를 가리키는 제네릭 클래스 생성 (2025.03.04)
+---
+   <p align="center"><img src="https://github.com/user-attachments/assets/0cac3782-7b0c-4ef1-9fd6-a5ab83bc29c9" width="500"/></p>
 
-  ![Image](https://github.com/user-attachments/assets/0cac3782-7b0c-4ef1-9fd6-a5ab83bc29c9)
-  ### **Lv.3_ver01**
+  ### **✔️ Lv.3_ver01**
     - ArithmeticCalculator 클래스를 제네릭으로 수정 (2025.03.05)
       - ArithmeticCalculator클래스 에서는 "계산"에 관련된 함수만 남김 (2025.03.05)
     - main함수에서 scanner이용으로 입력받기( 다른 클래스 에서는 스캐너이용 x, 사용자입력 x) (2025.03.05)
@@ -31,9 +34,17 @@
     - RecordController 클래스에서는 계산 기록에 관련된 함수만 남김 (2025.03.05)
       - 기록 접근할 때 파라미터에 인덱스가 들어가는 경우를 대비해 IndexOutOfBoundsException 예외 처리 (2025.03.05)
 
+ ---
+  ### 💡 특수 상황에 대한 예외 처리
+      - 0 이상의 실수만 입력하게 하기
+      - int. double 범위를 넘어가는 수 입력 못받게 처리
+      - 나누기에 분모 0 못오게 처리
+      - 각 입력에 주어진 포멧이 들어오지 않으면 다시 입력받게 하기
+      
+
 ----------------
 
-# 과제 소개
+# 📚 과제 소개
 ### Lv 1. 클래스 없이 기본적인 연산을 수행할 수 있는 계산기 만들기
   - [ ]  **양의 정수(0 포함)를 입력받기**
     - [ ]  Scanner를 사용하여 양의 정수 2개(0 포함)를 전달 받을 수 있습니다.
